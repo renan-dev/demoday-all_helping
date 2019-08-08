@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arya', sans-serif;
+}
+
+.main {
+    margin: 10%;
+    /* background-color: #999; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 240px;
+}
+
+.welcome {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #555;
+}
+
+.area-input_icon {
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    margin-bottom: 20px;
+}
+
+.tel_login {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #555;
+}
+
+.tel-icon {
+    font-size: 1.4em;
+    background-color: #369;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+input[type=number] {
+    height: 40px;
+    background-color: rgba(196, 196, 196, 0.56);
+    border: 1px solid gray;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    font-size: .9em;
+}
+
+input::placeholder {
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.tel_login p,
+.input {
+    margin-bottom: 20px;
+}
+
+.tel_login input[type=submit] {
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #0c88cd;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.bg-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0
+}
+
+.modal {
+    background-color: #fff;
+    padding: 3em 1em 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#btnCancel {
+    cursor: pointer;
+}
+
+.btn-yes,
+.btn-no {
+    text-transform: uppercase;
+    margin: 2em 1em 1em;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    width: 60px;
+}
+
+.btn-yes {
+    background-color: #0c88cd;
+}
+
+.btn-no {
+    background-color: #e43f34;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.msgError {
+    display: none;
+    color: #e43f34;
+    font-size: .9em;
+}
