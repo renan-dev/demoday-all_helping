@@ -7,15 +7,23 @@ const inputNumber = document.querySelector('.inputNum');
 const msgErr = document.querySelector('.msgError');
 
 btnProximo.onclick = () => {
-    if (inputNumber.textContent === "") {
+    if (inputNumber.value === "" || inputNumber.value.length < 11) {
         msgErr.style = "display:block";
-        return;
+        inputNumber.focus();
+        return false;
     }
+    if (inputNumber.keyPress = msgErr.style = "display:none");
+
+
     let modal = document.querySelector('#modal');
     modal.classList.add("d-flex");
+    msgErr.style = "display:none";
+    return;
 }
 
 btnNao.onclick = () => {
     let modal = document.querySelector('#modal');
     modal.classList.remove("d-flex");
+    inputNumber.value = "";
+    inputNumber.focus();
 }
