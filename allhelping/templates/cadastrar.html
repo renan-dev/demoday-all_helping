@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+<section class="cadastro">
+    <div class="msg-reg">
+        <p>Notamos que você ainda não está cadastrado em nosso sistema. Preencha os campos abaixo para realizar o cadastro.</p>
+    </div>
+    <div class="form-reg">
+        <p>Insira os dados nos campos</p>
+        <form method="POST" action="/home">
+            {% csrf_token %}
+            <label>Nome:</label>
+            <input type="text" placeholder="Digite seu nome...">
+            <label>Sobrenome:</label>
+            <input type="text" placeholder="Digite seu sobrenome...">
+            <label>E-mail:</label>
+            <input type="email" placeholder="Digite seu e-mail...">
+            <div class="d-flex">
+                <input type="submit" value="Próximo" id="btnNext" class="btn">
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock main %}

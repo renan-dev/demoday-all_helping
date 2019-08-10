@@ -146,3 +146,43 @@ body {
 .form {
     display: none;
 }
+
+
+
+.cadastro div{
+    padding: 10%;
+}
+.msg-reg {
+    background-color: #369;
+    text-align: center;
+    color: #fff;
+}
+
+.form-reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-reg p {
+    text-align: center;
+}
+
+.form-reg input[type=text], input[type=email], input[type=email] {
+    width: 100%;
+    border-radius: 5px;
+    border-left: 1px solid gray;
+}
+.form-reg input::placeholder {
+    text-decoration: none;
+}
+input[type=number], input[type=text], input[type=email] {
+    height: 40px;
+    background-color: #eee;
+    border: 1px solid gray;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    font-size: .9em;
+    color: gray;
+    padding-left: 10px;
+}
