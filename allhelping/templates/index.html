@@ -18,7 +18,7 @@
             <i class="fas fa-phone-alt tel-icon"></i>
             <input class="inputNum" type="text" maxlength="11" placeholder="Ex: (11) 9 1111-2222" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
         </div>
-        <input type="submit" value="Próximo" id="btnNext" class="btn">
+        <input type="submit" value="Próximo" id="btnNext" class="btnNext">
     </div>
 
     <div class="bg-modal" id="modal">
@@ -27,8 +27,9 @@
             <p id="num"></p>
             <div class="d-flex">
                     <input type="submit" class="btn-no" value="Não" id="btnNo">
-                <form method="POST" action="/acesso">
+                <form method="GET" action="/acesso">
                     {% csrf_token %}
+                    <input type="hidden" id="inputNumberBd" name="telefone">
                     <input type="submit" class="btn-yes" value="Sim" id="btnYes">
                 </form>
             </div>

@@ -8,6 +8,8 @@ const msgErr = document.querySelector('.msgError');
 
 const num = document.querySelector('#num');
 
+const inputNumberBd = document.querySelector('#inputNumberBd');
+
 btnProximo.onclick = () => {
     if (inputNumber.value === "" || inputNumber.value.length < 11) {
         msgErr.style = "display:block";
@@ -20,6 +22,7 @@ btnProximo.onclick = () => {
         modal.classList.add('d-flex');
     }
     num.innerHTML = inputNumber.value;
+    inputNumberBd.value = inputNumber.value;
 }
 
 btnNao.onclick = () => {
