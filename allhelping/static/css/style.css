@@ -185,3 +185,29 @@ input[type=number], input[type=text], input[type=email] {
 .form-reg input::placeholder {
     text-decoration: none;
 }
+
+.chat-insert {
+    display: flex;
+    height: 350px;
+    width: 100vw;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.chat-insert input[type=text] {
+    margin-right: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.chat-insert #enviar_mensagem {
+    border: none;
+    width: 100px;
+    height: 42px;
+    border-radius: 5px;
+    background-color: #369;
+    color: #fff;
+    font-size: 1.1em;
+    text-align: center;
+}
