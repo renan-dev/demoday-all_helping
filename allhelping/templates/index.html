@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block main %}
 {% load static %}
+
+<div class="splash_loader">
+    <h1>Bem vindo.</h1>
+    <img src="{% static "images/logo.png" %}">
+    <h2>Aguarde...</h2>
+</div>
+
 <section class="main">
     <div class="logo">
         <img src="{% static "images/logo.png" %}">

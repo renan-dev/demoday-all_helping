@@ -7,6 +7,36 @@ body {
     font-family: 'Arya', sans-serif;
 }
 
+.splash_loader {
+    padding: 0;
+    margin-top: -135px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.splash_loader img {
+    width: 100px;
+    padding:50px;
+}
+
+.splash_loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .main {
     margin: 10%;
     height: 100%;
