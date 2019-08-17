@@ -6,12 +6,6 @@ const msgErr = document.querySelector('.msgError');
 const num = document.querySelector('#num');
 const inputNumberBd = document.querySelector('#inputNumberBd');
 
-function splashLoad(){
-    setTimeout(function() {
-        document.querySelector('.splash_loader').className += ' hidden'
-    }, 3500)}
-window.addEventListener('load', splashLoad);
-
 function validaInput(){
     if (inputNumber.value === "" || inputNumber.value.length < 11) {
         msgErr.style = "display:block";
