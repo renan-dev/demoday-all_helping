@@ -2,14 +2,29 @@
 {% block main %}
 <section class="chat">
     <div class="chat-header">
-        <i></i>
-        <p class="ajudante"></p>
-        <img></img>
+        {% if papel == 'ajudante' %}
+            <i></i>
+            <p>{{match.ID_ajudado.nome}}</p>
+            <img></img>
+        {% else  %}
+            <i></i>
+            <p>{{match.ID_ajudante.nome}}</p>
+            <img></img>
+        {% endif %}
     </div>
-    
-    <div class="chat-insert">
-        <input type="text" required>
-        <input id="enviar_mensagem" input::placeholdertype="submit" placeholder="Enviar">
-    </div>
+        {% for mensagem in mensagens %}
+            <div class="comment">
+                <p>{{mensagem.remetente}} {{mensagem.data}}</p>
+                {{mensagem.mensagem}}
+            </div>
+            <br>
+        {% endfor %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="chat-insert">
+            <input type="text" name="mensagem" placeholder ="Digite sua mensagem..." required>
+            <input type="submit" placeholder="Enviar" class="btnNext">
+        </div>
+    </form>
 </section>
 {% endblock main %}

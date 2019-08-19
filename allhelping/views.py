@@ -62,4 +62,17 @@ def render_home(request):
     return render(request, 'home.html')
 
 def render_chat(request):
-    return render(request, 'chat.html')
+    match = Match.objects.filter(id=request.GET.get('MatchID')).first()
+    papel = request.GET.get('papel')
+    if papel == 'ajudante':
+        pessoa = match.ID_ajudante.nome
+    elif papel == 'ajudado':
+        pessoa = match.ID_ajudado.nome
+    if request.method == 'POST':
+        mensagem = Mensagem()
+        mensagem.mensagem = request.POST.get('mensagem')
+        mensagem.remetente = pessoa
+        mensagem.ID_match = match
+        mensagem.save()
+    mensagem = Mensagem.objects.filter(ID_match=request.GET.get('MatchID'))
+    return render(request, 'chat.html', {'mensagens': mensagem, 'papel': papel, 'match': match})
