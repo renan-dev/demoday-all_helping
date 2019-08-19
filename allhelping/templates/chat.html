@@ -14,7 +14,7 @@
     </div>
         {% for mensagem in mensagens %}
             <div class="comment">
-                <p>{{mensagem.remetente}} {{mensagem.data}}</p>
+                <p>{{mensagem.remetente}}, {{mensagem.data}}</p>
                 {{mensagem.mensagem}}
             </div>
             <br>
