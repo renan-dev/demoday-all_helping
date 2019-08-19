@@ -4,13 +4,13 @@
     {% if ajudante %}
         {% for match in matchs %}
         <div class="match">
-            <a href="/chat?MatchID={{match.id}}&papel=ajudado">{{match.ID_ajudado.nome}}</a>
+            <a href="/chat?MatchID={{match.id}}&papel=ajudante">{{match.ID_ajudado.nome}}</a>
         </div>
         {% endfor %}
     {% elif ajudado %}
         {% for match in matchs %}
         <div class="match">
-            <a href="/chat?MatchID={{match.id}}&papel=ajudante">{{match.ID_ajudante.nome}}</a>
+            <a href="/chat?MatchID={{match.id}}&papel=ajudado">{{match.ID_ajudante.nome}}</a>
         </div>
         {% endfor %}
     {% endif %}

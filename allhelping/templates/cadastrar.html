@@ -7,7 +7,7 @@
     </div>
     <div class="form-reg">
         <p>Insira os dados nos campos</p>
-        <form method="POST" action="/cadastro">
+        <form method="POST" action="/acesso?telefone={{telefone}}">
             {% csrf_token %}
             <input type="hidden" name="telefone" value="{{telefone}}">
             <label>Nome:</label>
