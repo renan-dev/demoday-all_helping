@@ -3,11 +3,17 @@
 <section class="chat">
     <div class="chat-header">
         {% if papel == 'ajudante' %}
+        <div>
             <i class="fas fa-user-circle user-pic"></i>
             <p class="user-name">{{match.ID_ajudado.nome}}</p>
+        </div>
+        <a href="javascript:history.back()"><i class="fas fa-undo btn-back"></i></a>
         {% else  %}
+        <div>
             <i class="fas fa-user-circle user-pic"></i>
             <p class="user-name">{{match.ID_ajudante.nome}}</p>
+        </div>
+        <a href="javascript:history.back()"><i class="fas fa-undo btn-back"></i></a>
         {% endif %}
     </div>
     <div class ="chat-content"> 

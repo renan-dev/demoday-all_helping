@@ -1,3 +1,5 @@
+{% load static %}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +15,7 @@ body {
 }
 
 .main {
-    margin: 10%;
-    height: 100%;
+    padding: 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -255,9 +256,9 @@ input[type=number], input[type=text], input[type=email] {
 .chat {
     display: flex;
     /*align-items: center;*/
-    justify-content: center;
+    /*justify-content: center;*/
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
  
 }
@@ -312,10 +313,11 @@ input[type=number], input[type=text], input[type=email] {
     background: #fff;
 }
 
-.chat-header{
+.chat-header, .chat-header div{
     background: #369;
     color: #fff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0.5em 1em;
 }
@@ -324,6 +326,26 @@ input[type=number], input[type=text], input[type=email] {
     font-size: 2em;
     margin-right: 0.5em;
 }
-.user-name{
+
+.user-name, .btn-back{
     font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.container section{
+    width: 100%;
+    max-width: 600px;
+    max-height: 720px;
+    overflow: auto;
+    border: solid 1px #bbb;
+    background: #fff;
+    padding: 1em;
+    border-radius: 10px;
 }
