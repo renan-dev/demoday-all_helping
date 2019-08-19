@@ -3,15 +3,14 @@
 <section class="chat">
     <div class="chat-header">
         {% if papel == 'ajudante' %}
-            <i></i>
-            <p>{{match.ID_ajudado.nome}}</p>
-            <img></img>
+            <i class="fas fa-user-circle user-pic"></i>
+            <p class="user-name">{{match.ID_ajudado.nome}}</p>
         {% else  %}
-            <i></i>
-            <p>{{match.ID_ajudante.nome}}</p>
-            <img></img>
+            <i class="fas fa-user-circle user-pic"></i>
+            <p class="user-name">{{match.ID_ajudante.nome}}</p>
         {% endif %}
     </div>
+    <div class ="chat-content"> 
         {% for mensagem in mensagens %}
             <div class="comment">
                 <p>{{mensagem.remetente}}, {{mensagem.data}}</p>
@@ -19,6 +18,7 @@
             </div>
             <br>
         {% endfor %}
+    </div>
     <form method="POST" action="">
         {% csrf_token %}
         <div class="chat-insert">
