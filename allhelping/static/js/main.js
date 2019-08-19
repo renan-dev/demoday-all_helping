@@ -31,3 +31,15 @@ function fechaModal(){
     inputNumber.focus();
 }
 btnNao.addEventListener('click', fechaModal);
+
+function mostrarModal(){
+    let modal = document.querySelector('#modal');
+    modal.classList.add('d-flex');
+}
+
+document.getElementById("ajudar").addEventListener("click", function(event){
+    event.preventDefault();
+    btnAjudar = document.querySelector('#ajudar');
+    inputPapel = document.querySelector('#papel');
+    inputPapel.value = btnAjudar.value;
+});

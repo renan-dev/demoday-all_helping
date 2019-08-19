@@ -1,26 +1,18 @@
 {% extends 'base.html' %}
 {% block main %}
-<section class="chat">
-    <div class="chat-header">
-        <i></i>
-        <p class="ajudante"></p>
-        <img></img>
-    </div>
-
-    <div class="chat-content">
-        <div class="coment">
-            <p>Mano 1</p>
-            <p>Conteúdo do chat 1</p>
+<section class="match-content">
+    {% if ajudante %}
+        {% for match in matchs %}
+        <div class="match">
+            <a href="/chat?MatchID={{match.ID}}&papel=ajudado">{{match.ID_ajudado.nome}}</a>
         </div>
-        <div class="coment">
-            <p>Mano 2</p>
-            <p>Conteúdo do chat 2</p>
+        {% endfor %}
+    {% elif ajudado %}
+        {% for match in matchs %}
+        <div class="match">
+            <a href="/chat?MatchID='{{match.ID}}&papel=ajudante">{{match.ID_ajudante.nome}}</a>
         </div>
-    </div>
-
-    <div class="chat-insert">
-        <input type="text" required>
-        <input id="enviar_mensagem" input::placeholdertype="submit" placeholder="Enviar">
-    </div>
+        {% endfor %}
+    {% endif %}
 </section>
 {% endblock main %}

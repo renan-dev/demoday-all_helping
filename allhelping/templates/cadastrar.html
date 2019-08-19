@@ -17,7 +17,18 @@
             <label>E-mail:</label>
             <input type="email" name="email" placeholder="Digite seu e-mail..." required>
             <div class="d-flex">
-                <input type="submit" value="Próximo" id="btnNext" class="btnNext">
+                <div type="submit" value="Próximo" id="btnNext" class="btnNext" onclick="mostrarModal()">Próximo</div>
+            </div>
+            <div class="bg-modal" id="modal">
+                <div class="modal">
+                    <p>Você precisa de ajuda ou quer ajudar?</p>
+                    <p id="num"></p>
+                    <div class="d-flex">
+                        <input type="hidden" name="papel">
+                        <input type="submit" class="btn-no" name="Ajudar" value="Ajudar" id="btnNo">
+                        <input type="submit" class="btn-yes" name="Ajuda" value="Ajuda" id="btnYes">
+                    </div>
+                </div>
             </div>
         </form>
     </div>
