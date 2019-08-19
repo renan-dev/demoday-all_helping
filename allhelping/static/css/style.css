@@ -285,6 +285,7 @@ input[type=number], input[type=text], input[type=email] {
 .chat-content{
     overflow: auto;
     padding: 0 1em;
+    min-height: 82%;
 }
 
 .comment {
