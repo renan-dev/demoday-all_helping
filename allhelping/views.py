@@ -60,6 +60,7 @@ def render_home(request):
 def render_chat(request):
     match = Match.objects.filter(id=request.GET.get('MatchID')).first()
     papel = request.GET.get('papel')
+    i = 0
     if papel == 'ajudante':
         pessoa = match.ID_ajudante.nome
     elif papel == 'ajudado':
