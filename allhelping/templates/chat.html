@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
+{% block head %}
+<script type="text/javascript">
+    window.onload = function(){
+    const chat = document.querySelector(".chat-content");
+    chat.scrollTo(0,chat.scrollHeight);
+    }
+</script>
+{% endblock head %}
 {% block main %}
 <section class="chat">
     <div class="chat-header">
@@ -33,4 +41,5 @@
         </div>
     </form>
 </section>
+
 {% endblock main %}

@@ -263,13 +263,20 @@ input[type=number], input[type=text], input[type=email] {
  
 }
 
+.chat-insert {
+    padding: 1em;
+    background: #eee;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .chat-insert input[type=text] {
     margin-right: 5px;
-    width: 60%;
+    width: 80%;
     height: 40px;
     border-radius: 5px;
     border-left: 1px solid #999;
+    background: #fff;
 }
 
 .chat-insert #enviar_mensagem {
@@ -286,7 +293,7 @@ input[type=number], input[type=text], input[type=email] {
 .chat-content{
     overflow: auto;
     padding: 0 1em;
-    min-height: 82%;
+    height: 80%;
 }
 
 .comment {
@@ -302,16 +309,11 @@ input[type=number], input[type=text], input[type=email] {
     color: #999;
     padding: 1em;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #999;
 }
 
-.match:nth-child(odd){
-    background: #eee;
-    
-}
-
-.match:nth-child(even){
-    background: #fff;
-}
 
 .chat-header, .chat-header div{
     background: #369;
@@ -323,12 +325,12 @@ input[type=number], input[type=text], input[type=email] {
 }
 
 .user-pic{
-    font-size: 2em;
+    font-size: 3.5em;
     margin-right: 0.5em;
 }
 
 .user-name, .btn-back{
-    font-size: 1.5em;
+    font-size: 2em;
     margin-right: 0.5em;
 }
 
@@ -341,11 +343,17 @@ input[type=number], input[type=text], input[type=email] {
 
 .container section{
     width: 100%;
+    min-height: 450px;
     max-width: 600px;
-    max-height: 720px;
+    max-height: 90vh;
     overflow: auto;
     border: solid 1px #bbb;
     background: #fff;
-    padding: 1em;
     border-radius: 10px;
+}
+
+.match-header{
+    padding: 1em;
+    color: #fff;
+    background: #369;
 }

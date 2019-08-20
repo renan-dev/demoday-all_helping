@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% block main %}
 <section class="match-content">
+    <div class="match-header">
+        <p>Suas conversas</p>
+    </div>
     {% if ajudante %}
         {% for match in matchs %}
-        <div class="match">
-            <a href="/chat?MatchID={{match.id}}&papel=ajudante">{{match.ID_ajudado.nome}}</a>
-        </div>
+        <a href="/chat?MatchID={{match.id}}&papel=ajudante">
+            <div class="match">
+                <i class="fas fa-user-circle user-pic"></i>
+                {{match.ID_ajudado.nome}}
+            </div>
+        </a>
         {% endfor %}
     {% elif ajudado %}
         {% for match in matchs %}
