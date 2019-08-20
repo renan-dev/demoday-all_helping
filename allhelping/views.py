@@ -70,5 +70,6 @@ def render_chat(request):
         mensagem.remetente = pessoa
         mensagem.ID_match = match
         mensagem.save()
+        i -= 1
     mensagem = Mensagem.objects.filter(ID_match=request.GET.get('MatchID'))
-    return render(request, 'chat.html', {'mensagens': mensagem, 'papel': papel, 'match': match})
+    return render(request, 'chat.html', {'mensagens': mensagem, 'papel': papel, 'match': match,'i': i})
