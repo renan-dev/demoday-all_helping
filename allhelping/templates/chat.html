@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block head %}
 <script type="text/javascript">
-    window.onload = function(){
-    const chat = document.querySelector(".chat-content");
-    chat.scrollTo(0,chat.scrollHeight);
+    function foo() {
+        location.reload(true)
     }
+
+    window.onload = function() {            
+        setInterval("foo()", 5000)
+        const chat = document.querySelector(".chat-content");
+        chat.scrollTo(0,chat.scrollHeight);
+    }            
+        
+    
 </script>
 {% endblock head %}
 {% block main %}
