@@ -124,6 +124,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    max-width: 80vw;
 }
 
 #btnCancel {
@@ -138,7 +140,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     color: white;
-    width: auto;
+    min-width: 50px;
 }
 
 .btn-ajdr, .btn-ajd {
@@ -174,7 +176,7 @@ body {
     height: 40px;
 }
 
-.btnNext2 p {
+.btnNext2 p, .btnNovoChat p{
     width: 100px;
     height: 40px;
     border-radius: 5px;
@@ -353,7 +355,24 @@ input[type=number], input[type=text], input[type=email] {
 }
 
 .match-header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1em;
     color: #fff;
     background: #369;
+    width: 570px;
+    max-width: 91vw;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.btnNovoChat p{
+    background: #fff;
+    color: #999;
+    font-size: 1em;
+}
+.matchs {
+    margin-top: 70px;
 }

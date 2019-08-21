@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .models import Ajudado, Ajudante, Match, Mensagem
+import random
 
 # Create your views here.
 def render_index(request):
     return render(request, 'index.html')
 
 def acesso(request):
-    if request.method == 'POST':
+    i = 0
+    if request.method == 'POST' and request.POST.get('gerarChat') is None:
         if request.POST.get('Ajudar') == 'Ajudar':
             pessoa = Ajudante()
         elif request.POST.get('Ajuda') == 'Ajuda':
@@ -34,16 +36,24 @@ def acesso(request):
     if pessoa is not None:
         if papel == 'ajudante':
             match_bd = Match.objects.filter(ID_ajudante=pessoa.id).first()
-            if match_bd is None:
+            if match_bd is None or request.POST.get('gerarChat'):
                 match = Match()
                 match.ID_ajudante = pessoa
-                match.ID_ajudado = Ajudado.objects.first()
-                match.save()
+                match.ID_ajudado = Ajudado.objects.order_by("?").first()
+                
+                while Match.objects.filter(ID_ajudado=match.ID_ajudado) and i <= 50:
+                    match = Match()
+                    match.ID_ajudante = pessoa
+                    match.ID_ajudado = Ajudado.objects.order_by("?").first()
+                    i += 1
+                if i <= 50:
+                    match.save()
             match_bd = Match.objects.filter(ID_ajudante=pessoa.id).all()
-            return render(request, 'home.html', {'matchs': match_bd, 'ajudante': True})
+            n = random.randrange(0, Ajudado.objects.count())
+            return render(request, 'home.html', {'matchs': match_bd, 'ajudante': True, 'n': i})
         else:
             match_bd = Match.objects.filter(ID_ajudado=pessoa.id).first()
-            if match_bd is None:
+            if match_bd is None or request.POST.get('gerarChat'):
                 match = Match()
                 match.ID_ajudante = Ajudante.objects.first()
                 match.ID_ajudado = pessoa

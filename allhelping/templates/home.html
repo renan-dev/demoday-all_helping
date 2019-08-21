@@ -2,23 +2,46 @@
 {% block main %}
 <section class="match-content">
     <div class="match-header">
-        <p>Suas conversas</p>
+        <p>Suas conversas{{n}}</p>
+        <div class="btnNext2 btnNovoChat" onclick="mostrarModal()"><p>Novo Chat</p></div>
     </div>
-    {% if ajudante %}
-        {% for match in matchs %}
-        <a href="/chat?MatchID={{match.id}}&papel=ajudante">
+    <div class="matchs">
+        {% if ajudante %}
+            {% for match in matchs %}
+            <a href="/chat?MatchID={{match.id}}&papel=ajudante">
+                <div class="match">
+                    <i class="fas fa-user-circle user-pic"></i>
+                    {{match.ID_ajudado.nome}}
+                </div>
+            </a>
+            {% endfor %}
+        {% elif ajudado %}
+            {% for match in matchs %}
             <div class="match">
-                <i class="fas fa-user-circle user-pic"></i>
-                {{match.ID_ajudado.nome}}
+                <a href="/chat?MatchID={{match.id}}&papel=ajudado">{{match.ID_ajudante.nome}}</a>
             </div>
-        </a>
-        {% endfor %}
-    {% elif ajudado %}
-        {% for match in matchs %}
-        <div class="match">
-            <a href="/chat?MatchID={{match.id}}&papel=ajudado">{{match.ID_ajudante.nome}}</a>
+            {% endfor %}
+        {% endif %}
+        <div class="bg-modal2" id="modal">
+            <div class="modal2">
+            {% if n < 50 %}
+                <p>Você quer gerar um novo chat?</p>
+                <p id="num"></p>
+                <div class="d-flex">
+                    <input type="submit" class="btn-no" value="Não" id="btnNo" onclick="fechaModal()">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="submit" class="btn-yes" value="Sim" name="gerarChat" id="btnYes">
+                    </form>
+                </div>
+            {% else %}
+                <p>No momento não temos alguém disponível para conversar. Que tal tentar mais tarde? Abraços!</p>
+                <div class="d-flex">
+                    <input type="submit" class="btn-yes" value="Entendi" name="gerarChat" onclick="fechaModal()" id="btnYes">
+                </div>
+            {% endif %}
+            </div>
         </div>
-        {% endfor %}
-    {% endif %}
+    </div>
 </section>
 {% endblock main %}
