@@ -50,7 +50,7 @@ def acesso(request):
                     match.save()
             match_bd = Match.objects.filter(ID_ajudante=pessoa.id).all()
             n = random.randrange(0, Ajudado.objects.count())
-            return render(request, 'home.html', {'matchs': match_bd, 'ajudante': True, 'n': i})
+            return render(request, 'home.html', {'matchs': match_bd, 'ajudante': True, 'n': i, 'papel': papel})
         else:
             match_bd = Match.objects.filter(ID_ajudado=pessoa.id).first()
             if match_bd is None or request.POST.get('gerarChat'):
@@ -62,6 +62,7 @@ def acesso(request):
             return render(request, 'home.html', {'matchs': match_bd, 'ajudado': True})
 
 def render_cadastro(request):
+    i=0
     return render(request, 'cadastrar.html')
 
 def render_home(request):

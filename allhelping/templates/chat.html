@@ -2,7 +2,7 @@
 {% block head %}
 <script type="text/javascript">
     function foo() {
-        location.reload(true)
+        /*location.reload(true)*/
     }
 
     window.onload = function() {            
@@ -33,11 +33,27 @@
     </div>
     <div class ="chat-content"> 
         {% for mensagem in mensagens %}
-            <div class="comment">
+        {% if papel == 'ajudante'%}
+            {% if mensagem.remetente == match.ID_ajudante.nome %}
+            <div class="balao {{papel}}">
+            {% else %}
+            <div class="balao">
+            {% endif %}
                 <p>{{mensagem.remetente}}, {{mensagem.data}}</p>
                 {{mensagem.mensagem}}
             </div>
             <br>
+        {% elif papel == 'ajudado'%}
+            {% if mensagem.remetente == match.ID_ajudado.nome %}
+            <div class="balao {{papel}}">
+            {% else %}
+            <div class="balao">
+            {% endif %}
+                <p>{{mensagem.remetente}}, {{mensagem.data}}</p>
+                {{mensagem.mensagem}}
+            </div>
+            <br>
+        {% endif %}
         {% endfor %}
     </div>
     <form method="POST" action="">
