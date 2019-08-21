@@ -245,7 +245,7 @@ input[type=number], input[type=text], input[type=email] {
 }
 
 .form-reg input[type=text], input[type=email], input[type=email] {
-    width: 100%;
+    width: 95%;
     border-radius: 5px;
     border-left: 1px solid gray;
 }
