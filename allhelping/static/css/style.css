@@ -381,7 +381,6 @@ input[type=number], input[type=text], input[type=email] {
     background: #eee;
     border-radius: 15px;
     width: 300px;
-    height: 100px;
     position: relative;
     color: #369;
     padding: 0.7em;
